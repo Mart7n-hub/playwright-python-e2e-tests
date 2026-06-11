@@ -2,7 +2,7 @@
 Automatizované end-to-end testy webu Engeto vytvořené pomocí Python, Pytest a Playwright.
 
 ## Použité technologie
-- Python 3.x
+- Python 
 - Pytest
 - Playwright
 - python-dotenv
