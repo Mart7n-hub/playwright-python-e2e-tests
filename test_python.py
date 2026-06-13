@@ -7,7 +7,7 @@ load_dotenv(dotenv_path=".env", override=True)
 USERNAME = os.getenv("USERNAME")
 PASSWORD = os.getenv("PASSWORD")
 
-assert USERNAME and PASSWORD, "Doplňte prosim.env"
+assert USERNAME and PASSWORD, "Doplňte prosim .env"
 
 # Pomocná funkce pro odmítnutí cookies
 def reject_cookies(page):
@@ -38,7 +38,7 @@ def test_testing_course(page):
 
     title_term = page.get_by_role("heading", name="Termíny", exact=True)
 
-    assert title_term.is_visible() 
+    expect(title_term).to_be_visible()
 
 
 # Ověření fungujícího přihlášení a přístupu k záznamu lekcí.
@@ -61,6 +61,5 @@ def test_testing_course_url(page):
     page.wait_for_url("**/study/**")
 
     course_records_button = page.get_by_role("button", name="Záznamy lekcí")
-    course_records_button.wait_for(state="visible")
 
-    assert course_records_button.is_visible()
+    expect(course_records_button).to_be_visible()
